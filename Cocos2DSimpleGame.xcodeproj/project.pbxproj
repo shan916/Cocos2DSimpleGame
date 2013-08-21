@@ -141,10 +141,18 @@
 		74E23D4517C4457D00A57820 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E23D4417C4457D00A57820 /* AppDelegate.m */; };
 		74E23D4817C4457D00A57820 /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E23D4717C4457D00A57820 /* HelloWorldLayer.m */; };
 		74E23D4B17C4457D00A57820 /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E23D4A17C4457D00A57820 /* IntroLayer.m */; };
+		74E23D5C17C449AE00A57820 /* monster-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 74E23D5317C449AE00A57820 /* monster-hd.png */; };
+		74E23D5D17C449AE00A57820 /* monster.png in Resources */ = {isa = PBXBuildFile; fileRef = 74E23D5417C449AE00A57820 /* monster.png */; };
+		74E23D5E17C449AE00A57820 /* player-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 74E23D5517C449AE00A57820 /* player-hd.png */; };
+		74E23D5F17C449AE00A57820 /* player.png in Resources */ = {isa = PBXBuildFile; fileRef = 74E23D5617C449AE00A57820 /* player.png */; };
+		74E23D6017C449AE00A57820 /* projectile-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 74E23D5717C449AE00A57820 /* projectile-hd.png */; };
+		74E23D6117C449AE00A57820 /* projectile.png in Resources */ = {isa = PBXBuildFile; fileRef = 74E23D5817C449AE00A57820 /* projectile.png */; };
+		74E23D6217C449AE00A57820 /* background-music-aac.caf in Resources */ = {isa = PBXBuildFile; fileRef = 74E23D5A17C449AE00A57820 /* background-music-aac.caf */; };
+		74E23D6317C449AE00A57820 /* pew-pew-lei.caf in Resources */ = {isa = PBXBuildFile; fileRef = 74E23D5B17C449AE00A57820 /* pew-pew-lei.caf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		74E23B9B17C4457900A57820 /* Cocos2DSimpleGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cocos2DSimpleGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		74E23B9B17C4457900A57820 /* 	.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "	.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74E23B9E17C4457A00A57820 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		74E23BA017C4457A00A57820 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		74E23BA217C4457A00A57820 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
@@ -425,6 +433,14 @@
 		74E23D4717C4457D00A57820 /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
 		74E23D4917C4457D00A57820 /* IntroLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		74E23D4A17C4457D00A57820 /* IntroLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
+		74E23D5317C449AE00A57820 /* monster-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monster-hd.png"; sourceTree = "<group>"; };
+		74E23D5417C449AE00A57820 /* monster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = monster.png; sourceTree = "<group>"; };
+		74E23D5517C449AE00A57820 /* player-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player-hd.png"; sourceTree = "<group>"; };
+		74E23D5617C449AE00A57820 /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player.png; sourceTree = "<group>"; };
+		74E23D5717C449AE00A57820 /* projectile-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "projectile-hd.png"; sourceTree = "<group>"; };
+		74E23D5817C449AE00A57820 /* projectile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = projectile.png; sourceTree = "<group>"; };
+		74E23D5A17C449AE00A57820 /* background-music-aac.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "background-music-aac.caf"; sourceTree = "<group>"; };
+		74E23D5B17C449AE00A57820 /* pew-pew-lei.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pew-pew-lei.caf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -460,7 +476,7 @@
 		74E23B9C17C4457900A57820 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				74E23B9B17C4457900A57820 /* Cocos2DSimpleGame.app */,
+				74E23B9B17C4457900A57820 /* 	.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -501,6 +517,7 @@
 		74E23BB317C4457A00A57820 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				74E23D5117C449AE00A57820 /* ResourcePack */,
 				74E23BB417C4457A00A57820 /* Default.png */,
 				74E23BB617C4457A00A57820 /* Default@2x.png */,
 				74E23BB817C4457A00A57820 /* Default-568h@2x.png */,
@@ -879,12 +896,43 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		74E23D5117C449AE00A57820 /* ResourcePack */ = {
+			isa = PBXGroup;
+			children = (
+				74E23D5217C449AE00A57820 /* Art */,
+				74E23D5917C449AE00A57820 /* Sounds */,
+			);
+			path = ResourcePack;
+			sourceTree = "<group>";
+		};
+		74E23D5217C449AE00A57820 /* Art */ = {
+			isa = PBXGroup;
+			children = (
+				74E23D5317C449AE00A57820 /* monster-hd.png */,
+				74E23D5417C449AE00A57820 /* monster.png */,
+				74E23D5517C449AE00A57820 /* player-hd.png */,
+				74E23D5617C449AE00A57820 /* player.png */,
+				74E23D5717C449AE00A57820 /* projectile-hd.png */,
+				74E23D5817C449AE00A57820 /* projectile.png */,
+			);
+			path = Art;
+			sourceTree = "<group>";
+		};
+		74E23D5917C449AE00A57820 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				74E23D5A17C449AE00A57820 /* background-music-aac.caf */,
+				74E23D5B17C449AE00A57820 /* pew-pew-lei.caf */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		74E23B9A17C4457900A57820 /* Cocos2DSimpleGame */ = {
+		74E23B9A17C4457900A57820 /* 	 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 74E23D4E17C4457D00A57820 /* Build configuration list for PBXNativeTarget "Cocos2DSimpleGame" */;
+			buildConfigurationList = 74E23D4E17C4457D00A57820 /* Build configuration list for PBXNativeTarget "	" */;
 			buildPhases = (
 				74E23B9717C4457900A57820 /* Sources */,
 				74E23B9817C4457900A57820 /* Frameworks */,
@@ -894,9 +942,9 @@
 			);
 			dependencies = (
 			);
-			name = Cocos2DSimpleGame;
+			name = "	";
 			productName = Cocos2DSimpleGame;
-			productReference = 74E23B9B17C4457900A57820 /* Cocos2DSimpleGame.app */;
+			productReference = 74E23B9B17C4457900A57820 /* 	.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -920,7 +968,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				74E23B9A17C4457900A57820 /* Cocos2DSimpleGame */,
+				74E23B9A17C4457900A57820 /* 	 */,
 			);
 		};
 /* End PBXProject section */
@@ -942,6 +990,14 @@
 				74E23BC717C4457A00A57820 /* Icon@2x.png in Resources */,
 				74E23BCA17C4457A00A57820 /* iTunesArtwork in Resources */,
 				74E23D2317C4457D00A57820 /* ChangeLog in Resources */,
+				74E23D5C17C449AE00A57820 /* monster-hd.png in Resources */,
+				74E23D5D17C449AE00A57820 /* monster.png in Resources */,
+				74E23D5E17C449AE00A57820 /* player-hd.png in Resources */,
+				74E23D5F17C449AE00A57820 /* player.png in Resources */,
+				74E23D6017C449AE00A57820 /* projectile-hd.png in Resources */,
+				74E23D6117C449AE00A57820 /* projectile.png in Resources */,
+				74E23D6217C449AE00A57820 /* background-music-aac.caf in Resources */,
+				74E23D6317C449AE00A57820 /* pew-pew-lei.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1162,13 +1218,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		74E23D4E17C4457D00A57820 /* Build configuration list for PBXNativeTarget "Cocos2DSimpleGame" */ = {
+		74E23D4E17C4457D00A57820 /* Build configuration list for PBXNativeTarget "	" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				74E23D4F17C4457D00A57820 /* Debug */,
 				74E23D5017C4457D00A57820 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
