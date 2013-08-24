@@ -13,6 +13,10 @@
 // Needed to obtain the Navigation Controller
 #import "AppDelegate.h"
 
+#import "SimpleAudioEngine.h"
+
+#import "GameOverLayer.h"
+
 #pragma mark - HelloWorldLayer
 
 NSMutableArray *_monsters;
@@ -42,15 +46,16 @@ NSMutableArray *_projectiles;
 {
     if ((self = [super initWithColor:ccc4(255, 255, 255, 255)]))
     {
+        _monsters = [[NSMutableArray alloc] init];
+        _projectiles = [[NSMutableArray alloc] init];
+        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"background-music-aac.caf"];
+        
         CGSize winSize = [CCDirector sharedDirector].winSize;
         CCSprite *player = [CCSprite spriteWithFile:@"player.png"];
         player.position = ccp(player.contentSize.width/2, winSize.height/2);
         [self addChild:player];
         [self schedule:@selector(gameLogic:) interval:1.0];
         [self setTouchEnabled:YES];
-        
-        _monsters = [[NSMutableArray alloc] init];
-        _projectiles = [[NSMutableArray alloc] init];
         
         [self schedule:@selector(update:)];
     }
@@ -85,6 +90,8 @@ NSMutableArray *_projectiles;
                                                position:ccp(-monster.contentSize.width/2, actualY)];
     CCCallBlockN *actionMoveDone = [CCCallBlockN actionWithBlock:^(CCNode *node)
                                     { [node removeFromParentAndCleanup:YES];
+                                        CCScene *gameOverScene = [GameOverLayer sceneWithWon:NO];
+                                        [[CCDirector sharedDirector] replaceScene:gameOverScene];
                                         [_monsters removeObject:node];
                                     }];
     
@@ -146,6 +153,8 @@ NSMutableArray *_projectiles;
     // add projectile to array
     projectile.tag = 2;
     [_projectiles addObject:projectile];
+    
+    [[SimpleAudioEngine sharedEngine] playEffect:@"pew-pew-lei.caf"];
 }
 
 - (void)update:(ccTime)dt
@@ -167,6 +176,13 @@ NSMutableArray *_projectiles;
         {
             [_monsters removeObject:monster];
             [self removeChild:monster cleanup:YES];
+            
+            _monstersDestroyed++;
+            if (_monstersDestroyed > 30)
+            {
+                CCScene *gameOverScene = [GameOverLayer sceneWithWon:YES];
+                [[CCDirector sharedDirector] replaceScene:gameOverScene];
+            }
         }
         
         if (monstersToDelete.count > 0)
