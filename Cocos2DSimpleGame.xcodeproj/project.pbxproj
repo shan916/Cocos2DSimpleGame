@@ -1176,6 +1176,7 @@
 				GCC_PREFIX_HEADER = Cocos2DSimpleGame/Prefix.pch;
 				HEADER_SEARCH_PATHS = "\"Cocos2DSimpleGame/libs/kazmath/include\"";
 				INFOPLIST_FILE = Cocos2DSimpleGame/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-lsqlite3",
@@ -1195,6 +1196,7 @@
 				GCC_PREFIX_HEADER = Cocos2DSimpleGame/Prefix.pch;
 				HEADER_SEARCH_PATHS = "\"Cocos2DSimpleGame/libs/kazmath/include\"";
 				INFOPLIST_FILE = Cocos2DSimpleGame/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-lsqlite3",
