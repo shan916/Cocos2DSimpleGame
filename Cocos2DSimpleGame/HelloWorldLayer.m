@@ -15,6 +15,9 @@
 
 #pragma mark - HelloWorldLayer
 
+NSMutableArray *_monsters;
+NSMutableArray *_projectiles;
+
 // HelloWorldLayer implementation
 @implementation HelloWorldLayer
 
@@ -45,6 +48,11 @@
         [self addChild:player];
         [self schedule:@selector(gameLogic:) interval:1.0];
         [self setTouchEnabled:YES];
+        
+        _monsters = [[NSMutableArray alloc] init];
+        _projectiles = [[NSMutableArray alloc] init];
+        
+        [self schedule:@selector(update:)];
     }
     
 	return self;
@@ -76,10 +84,15 @@
     CCMoveTo *actionMove = [CCMoveTo actionWithDuration:actualDuration
                                                position:ccp(-monster.contentSize.width/2, actualY)];
     CCCallBlockN *actionMoveDone = [CCCallBlockN actionWithBlock:^(CCNode *node)
-                                    { [node removeFromParentAndCleanup:YES] ;}];
+                                    { [node removeFromParentAndCleanup:YES];
+                                        [_monsters removeObject:node];
+                                    }];
     
     [monster runAction:[CCSequence actions:actionMove, actionMoveDone, nil]];
     
+    // add monster to array
+    monster.tag = 1;
+    [_monsters addObject:monster];
 }
 
 - (void)gameLogic:(ccTime)dt
@@ -126,8 +139,50 @@
       [CCCallBlockN actionWithBlock:^(CCNode *node)
        {
            [node removeFromParentAndCleanup:YES];
+           [_projectiles removeObject:node];
        }],
       nil]];
+    
+    // add projectile to array
+    projectile.tag = 2;
+    [_projectiles addObject:projectile];
+}
+
+- (void)update:(ccTime)dt
+{
+    NSMutableArray *projectilesToDelete = [[NSMutableArray alloc] init];
+    
+    for (CCSprite *projectile in _projectiles)
+    {
+        NSMutableArray *monstersToDelete = [[NSMutableArray alloc] init];
+        for (CCSprite *monster in _monsters)
+        {
+            if (CGRectIntersectsRect(projectile.boundingBox, monster.boundingBox))
+            {
+                [monstersToDelete addObject:monster];
+            }
+        }
+        
+        for (CCSprite *monster in monstersToDelete)
+        {
+            [_monsters removeObject:monster];
+            [self removeChild:monster cleanup:YES];
+        }
+        
+        if (monstersToDelete.count > 0)
+        {
+            [projectilesToDelete addObject:projectile];
+        }
+        [monstersToDelete release];
+    }
+    
+    for (CCSprite *projectile in projectilesToDelete)
+    {
+        [_projectiles removeObject:projectile];
+        [self removeChild:projectile cleanup:YES];
+    }
+    
+    [projectilesToDelete release];
 }
 
 // on "dealloc" you need to release all your retained objects
@@ -137,6 +192,11 @@
 	// in this particular example nothing needs to be released.
 	// cocos2d will automatically release all the children (Label)
 	
+    [_monsters release];
+    _monsters = nil;
+    [_projectiles release];
+    _projectiles = nil;
+    
 	// don't forget to call "super dealloc"
 	[super dealloc];
 }
